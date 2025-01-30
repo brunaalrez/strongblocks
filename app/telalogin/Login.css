@@ -1,14 +1,14 @@
-/* Estilos gerais para o container */
+/* Estilo do container */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, blue, #00f2fe);  /* Fundo com gradiente */
+    background: linear-gradient(to right, blue, #00f2fe);  /* Fundo com duas cores */
   }
   
   .login-panel {
-    background: rgba(255, 255, 255, 0.8);  /* Fundo do painel com transparência */
+    background: rgba(255, 255, 255, 0.8);  /* Fundo do painel */
     padding: 20px;
     border-radius: 8px;
     width: 300px;
