@@ -2,7 +2,7 @@ function BlocosAdiquirir() {
     return (  
         <div>
             <h1>Bloco Tipo A</h1>
-            <img src="https://placehold.co/400"/>
+            {/* <img src="https://placehold.co/400"/> */}
             <hr/>
             <h2>Família de 20</h2>
             <p>Sua largura e formato corresponde a 19cm</p>
