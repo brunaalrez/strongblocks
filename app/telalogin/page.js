@@ -5,7 +5,10 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-panel">
-        <h2>Login</h2>
+        <h2>Bem vindo a stroongbloock!
+          <br/><br/>
+          Login
+        </h2>
         <form>
           <div className="input-group">
             <label htmlFor="username">Usuário</label>
