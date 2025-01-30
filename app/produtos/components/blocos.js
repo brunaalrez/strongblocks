@@ -4,7 +4,7 @@ function Blocos(arrt) {
             <p>Qual tipo de bloco você precisa?</p>
             <img src="https://placehold.co/200"/>
             <p>{arrt.nomeproduto}</p>
-            <a><button>Adiquirir</button></a>
+            <a href="../adiquirir_produto/page"><button>Adiquirir</button></a>
         </div>
      );
 }

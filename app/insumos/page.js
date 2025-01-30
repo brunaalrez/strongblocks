@@ -4,7 +4,7 @@ function Insumos() {
             <h1>Insumos</h1>
             <hr/>
             <p>Você gostaria de:</p>
-            <button>Visualizar</button>
+            <a href="./primeira_insumos">Visualizar</a>
             <br/>
             <button>Cadastrar Insumo</button>
             </div>
