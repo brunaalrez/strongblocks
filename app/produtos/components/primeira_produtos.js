@@ -2,12 +2,12 @@ import Blocos from "./blocos";
 
 function PrimeiraPagProduto() {
     return ( 
-        <div>
-            <h1>Produtos</h1>
+        <div className="text-black bg-gray-100">
+            <h1 className="text-center mt-8">Produtos</h1>
             <hr/>
-            <p>Precisa de mais blocos para sua construção?</p>
-            <p>Confira agora os diversos blocos que temos!</p>
-            <hr/>
+            <p className="text-center">Precisa de mais blocos para sua construção?</p>
+            <p className="text-center">Confira agora os diversos blocos que temos!</p>
+            
 
             <div className="flex justify-around">
                 <Blocos nomeproduto="Bloco A"/>
