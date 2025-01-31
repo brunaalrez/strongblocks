@@ -1,28 +1,18 @@
-import React from 'react';
-import './Login.css';  // Importando o arquivo de estilos
+import Login from "./components/Login";
 
-const Login = () => {
+export default function Home() {
   return (
-    <div className="login-container">
-      <div className="login-panel">
-        <h2>Bem vindo a stroongbloock!
-          <br/><br/>
-          Login
-        </h2>
-        <form>
-          <div className="input-group">
-            <label htmlFor="username">Usuário</label>
-            <input type="text" id="username" name="username" />
-          </div>
-          <div className="input-group">
-            <label htmlFor="password">Senha</label>
-            <input type="password" id="password" name="password" />
-          </div>
-          <button type="submit">Entrar</button>
-        </form>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-[#00f2fe] bg-blue-500">
+      <div className="bg-white bg-opacity-80 p-6 rounded-lg w-80 shadow-lg">
+        <h2 className="text-center text-2xl font-semibold mb-6">Bem vindo a StrongBlocks!<br/><br/> Faça seu login:</h2>
+        
+        <Login 
+          login="Login" 
+          senha="senha" 
+          username="username" 
+          Logar="Logar"
+        />
       </div>
     </div>
   );
-};
-
-export default Login;
+}
