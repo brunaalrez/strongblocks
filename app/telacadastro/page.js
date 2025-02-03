@@ -3,30 +3,37 @@ import Cadastro from "./components/cadastro";
 export default function Usuario() {
   return (
     <div>
-      <div className="p-2 rounded bg-blue-700 text-white">
+      <div className="font-black p-2 rounded bg-blue-700 text-white">
 
-      <h1>Cadastro de Usuário</h1>
+      <h1>StrongBlocks</h1>
       </div>
       
 
-      <div className="flex justify-center items-center min-h-screen bg-blue-400">
-      <div className="bg-white bg-opacity-80 p-6 rounded-lg w-80 shadow-lg">
-        <h2 className="text-center text-2xl font-semibold mb-6">Prencha seus dados:</h2>
+      <div className="flex flex-col min-h-screen bg-blue-400">
+      <div className="">
+        <h2 className="text-2xl text-white font-semibold mb-6">Dados para login:</h2>
     
-        <input className="p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="Nome" />
-        <input className="p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="Sobrenome" />
-        <input className="p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="Idade" type="number" />
-        <input className="p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="CPF" />
+        <input className=" grid grid-cols-1 font-Regular-Italic p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="Nome completo" />
+        <input className=" grid grid-cols-1 font-Regular-Italic p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="Data de Nascimento" type="date" />
+        <input className=" grid grid-cols-1 font-Regular p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="CPF" type="number" />
+        <input className=" grid grid-cols-1 font-Regular p-2 rounded bg-blue-700 text-white placeholder-white w-72" placeholder="RG" type="number" />
+        <input className=" grid grid-cols-1 font-Regular p-2 rounded bg-blue-700 placeholder-white w-72" placeholder="Email" />
+
+        <hr/>
+
+        <h2 className="text-white">Tipo de usuario</h2>
+        <input className=" grid grid-cols-1 font-light rounded bg-blue-700 placeholder-white w-72" placeholder="Admnistrador" />
+        <input className=" grid grid-cols-1 font-light rounded bg-blue-700 placeholder-white w-72" placeholder="Funcionario" />
+        <input className=" grid grid-cols-1 font-light rounded bg-blue-700 placeholder-white w-30" placeholder="Prestador" />
+      
 
         <button className="bg-black text-white p-2 rounded-full hover:bg-black w-24">
-          Cadastrar
+          Salvar e continuar
         </button>
- 
  
  
   </div>
 </div>
-
 
 
       
