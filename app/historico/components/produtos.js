@@ -1,4 +1,4 @@
-function Cadastro() {
+function Produtos() {
     return ( 
 
         <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg">
@@ -11,9 +11,9 @@ function Cadastro() {
         </div>
 
         <div className="border-b hover:bg-blue-50 p-4 flex justify-between">
-          <span>Marly Lopes</span>
-          <span>Cadastrou Marcelo Diniz</span>
-          <span>2024-12-06 10:00:00</span>
+          <span>Bloco tipo A</span>
+          <span>Realizada venda de 2 paletes</span>
+          <span>2025-03-08 11:50:00</span>
         </div>
 
  
@@ -21,4 +21,4 @@ function Cadastro() {
      );
 }
 
-export default Cadastro;
+export default Produtos;

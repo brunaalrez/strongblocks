@@ -2,22 +2,44 @@
 import React, { useState } from 'react';
 import Cadastro from './components/cadastro';
 import Insumos from './components/insumos';
+import Produtos from './components/produtos';
+import Login from './components/login';
 
 export default function HistoricoAtividades() {
 
   const [exibeCadastro, alteraExibeCadastro] = useState(true)
   const [exibeInsumos, alteraExibeInsumos] = useState(false)
+  const [exibeProdutos, alteraExibeProdutos] = useState(false)
+  const [exibeLogin, alteraExibelogin] = useState(false)
 
   function alteraExibicao(tela){
 
       if(tela == "cadastro"){
-        alteraExibeInsumos(false)
-        alteraExibeCadastro(true)
+        alteraExibeInsumos(true)
+        alteraExibeCadastro(false)
+        alteraExibeProdutos(false)
+        alteraExibelogin(false)
       }
 
       if(tela == "insumos"){
-        alteraExibeInsumos(true)
+        alteraExibeInsumos(false)
+        alteraExibeCadastro(true)
+        alteraExibeProdutos(false)
+        alteraExibelogin(false)
+      }
+
+      if(tela == "produtos"){
+        alteraExibeInsumos(false)
         alteraExibeCadastro(false)
+        alteraExibeProdutos(true)
+        alteraExibelogin(false)
+      }
+
+      if(tela == "login"){
+        alteraExibeInsumos(false)
+        alteraExibeCadastro(false)
+        alteraExibeProdutos(false)
+        alteraExibelogin(true)
       }
   }
   return (
@@ -27,6 +49,8 @@ export default function HistoricoAtividades() {
 
       <button onClick={()=> alteraExibicao("cadastro")}>Cadastro</button>
       <button onClick={()=> alteraExibicao("insumos")}>insumos</button>
+      <button onClick={()=> alteraExibicao("produtos")}>produtos</button>
+      <button onClick={()=> alteraExibicao("login")}>login</button>
 
       {
         exibeCadastro == true?
@@ -35,14 +59,27 @@ export default function HistoricoAtividades() {
         <div></div>  
       }
 
-{
+      {
         exibeInsumos == true?
         <Insumos/>  
         :
         <div></div>  
       }
-     
-     
+
+      {
+        exibeProdutos == true?
+        <Produtos/> 
+        :
+        <div></div>  
+      }
+
+      {
+        exibeLogin == true?
+        <Login/>
+        :
+        <div></div>  
+      }     
+        
 
     </div>
   );
