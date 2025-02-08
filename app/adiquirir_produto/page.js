@@ -1,12 +1,13 @@
 'use client'
-import { useState } from "react";
-
+import { useState } from "react"; 
+import Confirmado from "./components/confirmacao";
 
 function PaginaAdiquirirProduto() {
     const [carrinho, adicionaCarrinho] = useState(0);
     const [mostra, mostraBotao] = useState(false);
     const [total, valorTotal] = useState(0)
     const [precoA, precoProdutoA] = useState(150)
+    const [precoB, precoProdutoB] = useState(130)
 
     function handleCarrinho(adicionar = false){
         let novoCarrinho = carrinho;
@@ -40,7 +41,18 @@ function PaginaAdiquirirProduto() {
 
                 <h2>Família de 20</h2>
                 <p>Sua largura e formato corresponde a 19cm</p>
-                <p>{precoA}</p>
+                <button onClick={()=>{mostraAgora(); handleCarrinho(true);}}>Adiquirir</button>
+                {
+                    mostra == true &&
+                    <div>
+                        <button onClick={()=>Confirmado()} className="bg-black-400 text-color-gray-400">Comfirmar Compra</button>
+                        <button onClick={()=>handleCarrinho(false)} className="bg-black-400 text-color-gray-400">Cancelar</button>
+                    </div>
+                }
+                <hr/>
+
+                <h2>Família de 15</h2>
+                <p>Sua largura e formato corresponde a 14cm</p>
                 <button onClick={()=>{mostraAgora(); handleCarrinho(true);}}>Adiquirir</button>
                 {
                     mostra == true &&
@@ -50,12 +62,6 @@ function PaginaAdiquirirProduto() {
                     </div>
                 }
                 <hr/>
-
-                <h2>Família de 15</h2>
-                <p>Sua largura e formato corresponde a 14cm</p>
-                <button>Adiquirir</button>
-                <button onClick={()=>handleCarrinho(true)} className="bg-black-400 text-color-gray-400">Comfirmar Compra</button>
-                <button onClick={()=>handleCarrinho(false)} className="bg-black-400 text-color-gray-400">Cancelar</button>
              </div>
         </div>
      );
