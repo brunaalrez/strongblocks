@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react"; 
-import Confirmado from "./components/confirmacao";
+import Confirmado from "./confirmacao";
 
 function PaginaAdiquirirProduto() {
     const [carrinho, adicionaCarrinho] = useState(0);

@@ -1,5 +1,6 @@
 
 function Confirmado() {
+    console.log("vem")
     return ( 
         <div>
             <p>Compra Realizada</p>
