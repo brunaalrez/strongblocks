@@ -2,7 +2,7 @@ function Produtos() {
     return ( 
 
         <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg">
-        <div className="bg-yellow-400 text-white p-4 font-semibold">Histórico de Movimentações usuários</div>
+        <div className="bg-yellow-400 text-white p-4 font-semibold">Histórico de Movimentações produtos</div>
 
         <div className="p-4 flex justify-between font-bold bg-gray-200">
           <span>Nome</span>
