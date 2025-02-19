@@ -8,7 +8,7 @@ function PaginaAdiquirirProduto() {
     const [total, valorTotal] = useState(0)
     const [precoA, precoProdutoA] = useState(150)
     const [precoB, precoProdutoB] = useState(130)
-
+ 
     function handleCarrinho(adicionar = false){
         let novoCarrinho = carrinho;
         
@@ -21,8 +21,7 @@ function PaginaAdiquirirProduto() {
                 novoCarrinho--;
             }
         }
-        
-        valorTotal(novoCarrinho * precoA)
+        valorTotal(novoCarrinho * (precoA))
         
 
     }
@@ -34,6 +33,7 @@ function PaginaAdiquirirProduto() {
             <p className="p-3 text-lg">Carrinho <strong>{carrinho}</strong> itens</p>
             <p className="p-3 text-lg">Valor total:<strong> R${total} </strong></p>
             <div className="text-center border-solid text-gray-800 bg-yellow-50 px-5 border-gray-300 shadow-2xl m-3" >
+                
                 <h1>Bloco Tipo A</h1>
                 
                 <img src="https://placehold.co/400"/>
@@ -41,24 +41,24 @@ function PaginaAdiquirirProduto() {
 
                 <h2>Família de 20</h2>
                 <p>Sua largura e formato corresponde a 19cm</p>
-                <button onClick={()=>{mostraAgora(); handleCarrinho(true);}}>Adiquirir</button>
+                <button onClick={()=>{mostraAgora(); handleCarrinho(true);}} className="py-1 px-6 rounded-lg shadow-md">Adiquirir</button>
                 {
                     mostra == true &&
                     <div>
-                        <button onClick={()=>Confirmado()} className="bg-black-400 text-color-gray-400">Comfirmar Compra</button>
-                        <button onClick={()=>handleCarrinho(false)} className="bg-black-400 text-color-gray-400">Cancelar</button>
+                        <button onClick={()=>Confirmado()} className="bg-black-400 text-color-gray-400 py-1 px-6 rounded-lg shadow-md">Comfirmar Compra</button>
+                        <button onClick={()=>handleCarrinho(false)} className="bg-black-400 text-color-gray-400 py-1 px-6 rounded-lg shadow-md">Cancelar</button>
                     </div>
                 }
                 <hr/>
 
                 <h2>Família de 15</h2>
                 <p>Sua largura e formato corresponde a 14cm</p>
-                <button onClick={()=>{mostraAgora(); handleCarrinho(true);}}>Adiquirir</button>
+                <button onClick={()=>{mostraAgora(); handleCarrinho(true);}} className="py-1 px-6 rounded-lg shadow-md">Adiquirir</button>
                 {
                     mostra == true &&
                     <div>
-                        <button className="bg-black-400 text-color-gray-400">Comfirmar Compra</button>
-                        <button onClick={()=>handleCarrinho(false)} className="bg-black-400 text-color-gray-400">Cancelar</button>
+                        <button className="py-1 px-6 rounded-lg shadow-md">Comfirmar Compra</button>
+                        <button onClick={()=>handleCarrinho(false)} className="py-1 px-6 rounded-lg shadow-md">Cancelar</button>
                     </div>
                 }
                 <hr/>

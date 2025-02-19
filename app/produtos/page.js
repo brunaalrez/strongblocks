@@ -1,6 +1,19 @@
+'use client'
+import { useState } from "react";
 import Blocos from "./components/blocos";
 
 function Produtos() {
+    const [blocos, alteraBloco] = useState([{
+        id:0,
+        nome: "Bloco A"
+    },{
+        id:1,
+        nome: "Bloco B"
+    },{
+        id:2,
+        nome: "Bloco C"
+    }])
+    
     return ( 
         <div>
             <div className="text-gray-800 bg-gray-300">
@@ -11,9 +24,14 @@ function Produtos() {
             
 
             <div className="justify-flex px-30">
-                <Blocos nomeproduto="Bloco A"/>
-                <Blocos nomeproduto="Bloco B"/>
-                <Blocos nomeproduto="Bloco C"/>
+                <ul>
+                    {
+                        blocos.map((i)=>
+                        <Blocos nome={i.nome}/>
+                    )
+                    }
+                </ul>
+                
                 
             </div>
             
