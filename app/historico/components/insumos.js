@@ -106,13 +106,13 @@ export default function Insumos() {
         <span>Data</span>
       </div>
 
-      {insumo.map((i) => (
-        <div className="border-b hover:bg-blue-50 p-4 flex justify-between">
-          <span>{i.nome}</span>
-          <span>{i.ação}</span>
-          <span>{i.Datahora}</span>
-        </div>
-      ))}
+      {insumo.map((i, index) => (
+      <div key={index} className="border-b hover:bg-blue-50 p-4 flex justify-between">
+        <span>{i.nome}</span>
+        <span>{i.ação}</span>
+        <span>{i.Datahora}</span>
+      </div>
+    ))}
 
       <div className="border-b hover:bg-blue-50 p-4 flex justify-between">
         <span>João Silva</span>

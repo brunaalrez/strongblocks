@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import Cadastro from './components/cadastro';
+import Cadastro from './components/usuarios';
 import Insumos from './components/insumos';
 import Produtos from './components/produtos';
 import Login from './components/login';
@@ -47,7 +47,7 @@ export default function HistoricoAtividades() {
       <h1 className="text-3xl font-bold mb-6">Histórico de Atividades</h1>
 
       <div className="flex gap-4 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-950">
-      <button onClick={() => alteraExibicao("cadastro")}>Cadastro</button>
+      <button onClick={() => alteraExibicao("cadastro")}>Usuários</button>
 
       <button onClick={() => alteraExibicao("insumos")}>Insumos</button>
 

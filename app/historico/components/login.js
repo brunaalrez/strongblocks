@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Login() {
 
-  const [insumos, alterainsumos] = useState([
+  const [login, alteralogin] = useState([
     {
       id: 0,
       nome: "Marly Lopes",
@@ -108,13 +108,13 @@ export default function Login() {
         <span>Data</span>
       </div>
 
-      {insumos.map((i) => (
-        <div className="border-b hover:bg-blue-50 p-4 flex justify-between">
-          <span>{i.nome}</span>
-          <span>{i.ação}</span>
-          <span>{i.Datahora}</span>
-        </div>
-      ))}
+      {login.map((i, index) => (
+      <div key={index} className="border-b hover:bg-blue-50 p-4 flex justify-between">
+        <span>{i.nome}</span>
+        <span>{i.ação}</span>
+        <span>{i.Datahora}</span>
+      </div>
+    ))}
 
     </div>
   );
