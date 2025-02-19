@@ -46,10 +46,13 @@ export default function HistoricoAtividades() {
     <div className="flex flex-col items-center min-h-screen bg-blue-100 p-6">
       <h1 className="text-3xl font-bold mb-6">Histórico de Atividades</h1>
 
-      <div className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-950">
+      <div className="flex gap-4 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-950">
       <button onClick={() => alteraExibicao("cadastro")}>Cadastro</button>
+
       <button onClick={() => alteraExibicao("insumos")}>Insumos</button>
+
       <button onClick={() => alteraExibicao("produtos")}>Produtos</button>
+
       <button onClick={() => alteraExibicao("login")}>Login</button>
       </div>
 

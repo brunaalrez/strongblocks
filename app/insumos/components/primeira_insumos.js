@@ -5,7 +5,7 @@ function PrimeiraInsumos() {
             <hr/>
             <h2>Cimento</h2>
             <br/>
-            <p>Temos 2kg para fazer tantos blocos</p>
+            <p>adicionou 500kg </p>
             <p>O fornecedor é:</p>
             <a><button>Voltar</button></a>
             <a><button>Repor insumo</button></a>
