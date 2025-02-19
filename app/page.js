@@ -5,7 +5,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-200">
       <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8 text-center">
         <h1 className="text-2xl font-bold text-stone-950">Bem-vindo ao Sistema Strong Blocks</h1>
         <p className="text-gray-400 mt-2">Gerencie sua produção e estoque com facilidade.</p>
