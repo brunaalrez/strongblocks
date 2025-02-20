@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Importando o useRouter para navegação
+import { useRouter } from 'next/navigation';
 
 export default function Usuario() {
   
@@ -21,7 +21,7 @@ export default function Usuario() {
   const [confirmarSenha, setConfirmarSenha] = useState('');
   
   const [erro, setErro] = useState('');
-  const router = useRouter(); // hook do router
+  const router = useRouter();
 
   const validarCampos = () => {
     if (!nome || !dataNascimento || !cpf || !rg || !email || !tipoUsuario || !rua || !numero || !bairro || !cidade || !uf || !telefone || !senha || !confirmarSenha) {
@@ -51,15 +51,15 @@ export default function Usuario() {
       return false;
     }
 
-    setErro(''); // Limpar mensagem de erro
+    setErro('');
     return true;
   };
 
   const handleSalvar = (e) => {
-    e.preventDefault(); // Previne o comportamento padrão
+    e.preventDefault();
 
     if (validarCampos()) {
-      // Se a validação for bem-sucedida, redireciona para a tela de login
+      
       router.push('/telalogin');
     }
   };
@@ -74,7 +74,7 @@ export default function Usuario() {
         <div className="">
           <h2 className="text-2xl text-white font-semibold mb-6">Dados para login:</h2>
 
-          {/* Campos de formulário */}
+          
           <input
             className="grid grid-cols-1 font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
             placeholder="Nome completo"
@@ -93,7 +93,7 @@ export default function Usuario() {
           <input
             className="grid grid-cols-1 font-Regular p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
             placeholder="CPF"
-            type="text" // Alterado para 'text' para evitar problemas com números
+            type="number" 
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
           />
@@ -101,7 +101,7 @@ export default function Usuario() {
           <input
             className="grid grid-cols-1 font-Regular p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
             placeholder="RG"
-            type="text" // Alterado para 'text' para evitar problemas com números
+            type="text" 
             value={rg}
             onChange={(e) => setRg(e.target.value)}
           />
@@ -217,10 +217,9 @@ export default function Usuario() {
           <br />
           {erro && <div className="text-red-500">{erro}</div>}
 
-          {/* Botão que chama handleSalvar e realiza a navegação */}
           <button
             className="bg-black text-white p-2 rounded-full hover:bg-black w-24"
-            onClick={handleSalvar} // Usando a função de validação e navegação
+            onClick={handleSalvar}
           >
             Salvar e continuar
           </button>
