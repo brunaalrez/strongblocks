@@ -4,6 +4,8 @@ function Blocos(arrt) {
     const [mostrar, alteraMostrar] = useState(false);
     const [retira, alteraRetira] = useState(true)
 
+    const [mostrarBotao, mostrarBotaos] = useState(false);
+
     function adicionaProduto() {
         if (localStorage.getItem("carrinho") == null) {
             localStorage.setItem("carrinho", JSON.stringify([arrt.produto]));
@@ -31,20 +33,25 @@ function Blocos(arrt) {
 
             {retira &&(
                 <div>
-            <button onClick={() => {adicionaProduto();Mostrar();Retira()}}
-            className="bg-yellow-400 text-gray-800 py-1 px-6 rounded-lg shadow-md hover:bg-yellow-500 transition-all no-underline">
-                Adquirir
-            </button>
-
+                    <button onClick={() => {adicionaProduto();Mostrar();Retira()}}
+                    className="bg-yellow-400 text-gray-800 py-1 px-6 rounded-lg shadow-md hover:bg-yellow-500 transition-all no-underline">
+                    Adquirir
+                    </button>
                 </div>
-            )
-
-            }
+            )}
 
             {mostrar && (
                 <div className="mt-3 text-gray-700">
-                    <h2>Família de 20</h2>
-                    <p>Sua largura e formato corresponde a 19cm</p>
+                    <div>
+                        <h2>Família de 20</h2>
+                        <p>Sua largura e formato corresponde a 19cm</p>
+                    </div>
+                    
+                    <div>
+                        <h2>Família de 15</h2>
+                        <p>Sua largura e formato corresponde a 14cm</p> 
+                    </div>
+                    
                 </div>
             )}
         </div>
