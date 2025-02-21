@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Usuario() {
-  
   const [nome, setNome] = useState('');
   const [dataNascimento, setDataNascimento] = useState('');
   const [cpf, setCpf] = useState('');
@@ -19,8 +18,8 @@ export default function Usuario() {
   const [telefone, setTelefone] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
-  
   const [erro, setErro] = useState('');
+  
   const router = useRouter();
 
   const validarCampos = () => {
@@ -28,24 +27,20 @@ export default function Usuario() {
       setErro('Por favor, preencha todos os campos obrigatórios.');
       return false;
     }
-
     if (cpf.length !== 11 || isNaN(cpf)) {
       setErro('CPF inválido. O CPF deve ter 11 dígitos.');
       return false;
     }
-
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(email)) {
       setErro('Por favor, insira um e-mail válido.');
       return false;
     }
-
     const regexTelefone = /^\d{10,11}$/;
     if (!regexTelefone.test(telefone)) {
       setErro('Por favor, insira um número de telefone válido (10 ou 11 dígitos).');
       return false;
     }
-
     if (senha !== confirmarSenha) {
       setErro('As senhas não coincidem.');
       return false;
@@ -57,174 +52,171 @@ export default function Usuario() {
 
   const handleSalvar = (e) => {
     e.preventDefault();
-
     if (validarCampos()) {
-      
       router.push('/telalogin');
     }
   };
 
   return (
-    <div>
-      <div className="font-black p-2 rounded bg-yellow-400 text-white">
+    <div className="min-h-screen bg-gray-100 p-6 flex flex-col justify-center items-center">
+      <div className="font-black p-4 rounded bg-yellow-400 text-white mb-6 text-center">
         <h1>StrongBlocks</h1>
       </div>
 
-      <div className="flex flex-col min-h-screen bg-gray-400">
-        <div className="">
-          <h2 className="text-2xl text-white font-semibold mb-6">Dados para login:</h2>
+      <form className="w-full max-w-md bg-white p-8 rounded shadow-md">
+        <h2 className="text-2xl font-semibold mb-4">Cadastro de Usuário</h2>
 
-          
+        {/* Form Inputs */}
+        <div className="space-y-4">
           <input
-            className="grid grid-cols-1 font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
+            className="w-full p-3 rounded border border-gray-300"
             placeholder="Nome completo"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
           />
-          <br />
           <input
-            className="grid grid-cols-1 font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="Data de Nascimento"
+            className="w-full p-3 rounded border border-gray-300"
             type="date"
+            placeholder="Data de Nascimento"
             value={dataNascimento}
             onChange={(e) => setDataNascimento(e.target.value)}
           />
-          <br />
           <input
-            className="grid grid-cols-1 font-Regular p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
+            className="w-full p-3 rounded border border-gray-300"
             placeholder="CPF"
-            type="number" 
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
           />
-          <br />
           <input
-            className="grid grid-cols-1 font-Regular p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
+            className="w-full p-3 rounded border border-gray-300"
             placeholder="RG"
-            type="text" 
             value={rg}
             onChange={(e) => setRg(e.target.value)}
           />
-          <br />
           <input
-            className="grid grid-cols-1 font-Regular p-2 rounded bg-yellow-400 placeholder-white w-72"
+            className="w-full p-3 rounded border border-gray-300"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <hr />
-          <h2 className="text-white">Tipo de usuário</h2>
-          <div className="flex flex-col text-white">
-            <label>
-              <input
-                type="radio"
-                name="tipoUsuario"
-                value="administrador"
-                checked={tipoUsuario === 'administrador'}
-                onChange={(e) => setTipoUsuario(e.target.value)}
-              />
-              Administrador
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="tipoUsuario"
-                value="funcionario"
-                checked={tipoUsuario === 'funcionario'}
-                onChange={(e) => setTipoUsuario(e.target.value)}
-              />
-              Funcionário
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="tipoUsuario"
-                value="prestador"
-                checked={tipoUsuario === 'prestador'}
-                onChange={(e) => setTipoUsuario(e.target.value)}
-              />
-              Prestador
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="tipoUsuario"
-                value="fornecedor"
-                checked={tipoUsuario === 'fornecedor'}
-                onChange={(e) => setTipoUsuario(e.target.value)}
-              />
-              Fornecedor
-            </label>
+
+          <div className="space-y-2 mt-4">
+            <h3 className="font-medium text-lg">Tipo de Usuário</h3>
+            <div className="flex flex-col space-y-2">
+              <label>
+                <input
+                  type="radio"
+                  name="tipoUsuario"
+                  value="administrador"
+                  checked={tipoUsuario === 'administrador'}
+                  onChange={(e) => setTipoUsuario(e.target.value)}
+                />
+                Administrador
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipoUsuario"
+                  value="funcionario"
+                  checked={tipoUsuario === 'funcionario'}
+                  onChange={(e) => setTipoUsuario(e.target.value)}
+                />
+                Funcionário
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipoUsuario"
+                  value="prestador"
+                  checked={tipoUsuario === 'prestador'}
+                  onChange={(e) => setTipoUsuario(e.target.value)}
+                />
+                Prestador
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipoUsuario"
+                  value="fornecedor"
+                  checked={tipoUsuario === 'fornecedor'}
+                  onChange={(e) => setTipoUsuario(e.target.value)}
+                />
+                Fornecedor
+              </label>
+            </div>
           </div>
-          <hr />
-          <h3 className="text-white">Endereço</h3>
+
+          {/* Endereço */}
+          <div className="space-y-2 mt-4">
+            <h3 className="font-medium text-lg">Endereço</h3>
+            <input
+              className="w-full p-3 rounded border border-gray-300"
+              placeholder="Rua"
+              value={rua}
+              onChange={(e) => setRua(e.target.value)}
+            />
+            <input
+              className="w-full p-3 rounded border border-gray-300"
+              placeholder="Número"
+              value={numero}
+              onChange={(e) => setNumero(e.target.value)}
+            />
+            <input
+              className="w-full p-3 rounded border border-gray-300"
+              placeholder="Bairro"
+              value={bairro}
+              onChange={(e) => setBairro(e.target.value)}
+            />
+            <input
+              className="w-full p-3 rounded border border-gray-300"
+              placeholder="Cidade"
+              value={cidade}
+              onChange={(e) => setCidade(e.target.value)}
+            />
+            <input
+              className="w-full p-3 rounded border border-gray-300"
+              placeholder="UF"
+              value={uf}
+              onChange={(e) => setUf(e.target.value)}
+            />
+          </div>
+
+          {/* Telefone */}
           <input
-            className="font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="Rua"
-            value={rua}
-            onChange={(e) => setRua(e.target.value)}
-          />
-          <input
-            className="font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="Número"
-            value={numero}
-            onChange={(e) => setNumero(e.target.value)}
-          />
-          <input
-            className="font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="Bairro"
-            value={bairro}
-            onChange={(e) => setBairro(e.target.value)}
-          />
-          <input
-            className="font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="Cidade"
-            value={cidade}
-            onChange={(e) => setCidade(e.target.value)}
-          />
-          <input
-            className="font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="UF"
-            value={uf}
-            onChange={(e) => setUf(e.target.value)}
-          />
-          <br />
-          <br />
-          <h3 className="text-white">Telefone</h3>
-          <input
-            className="grid grid-cols-1 font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
+            className="w-full p-3 rounded border border-gray-300"
             placeholder="Telefone"
             value={telefone}
             onChange={(e) => setTelefone(e.target.value)}
           />
-          <br />
-          <h3 className="text-white">Senha</h3>
-          <input
-            className="grid grid-cols-1 font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="Senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            type="password"
-          />
-          <br />
-          <input
-            className="grid grid-cols-1 font-Regular-Italic p-2 rounded bg-yellow-400 text-white placeholder-white w-72"
-            placeholder="Confirmar senha"
-            value={confirmarSenha}
-            onChange={(e) => setConfirmarSenha(e.target.value)}
-            type="password"
-          />
-          <br />
+
+          {/* Senha */}
+          <div className="space-y-2 mt-4">
+            <input
+              className="w-full p-3 rounded border border-gray-300"
+              placeholder="Senha"
+              type="password"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+            <input
+              className="w-full p-3 rounded border border-gray-300"
+              placeholder="Confirmar senha"
+              type="password"
+              value={confirmarSenha}
+              onChange={(e) => setConfirmarSenha(e.target.value)}
+            />
+          </div>
+
           {erro && <div className="text-red-500">{erro}</div>}
 
           <button
-            className="bg-black text-white p-2 rounded-full hover:bg-black w-24"
+            className="w-full p-3 bg-yellow-500 text-white rounded mt-6"
             onClick={handleSalvar}
           >
-            Salvar e continuar
+            Salvar e Continuar
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

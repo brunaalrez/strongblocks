@@ -309,7 +309,7 @@ export default function Login({ login, senha, email, Logar }) {
           nome={email}
           valor={ValorEmail}
           onChange={(e) => alteraValorEmail(e.target.value)}
-          className="w-full p-2 text-lg border border-gray-300 rounded-md placeholder-yellow-400"
+          className="w-full p-2 text-lg border border-gray-300 rounded-md placeholder-amber-400"
         />
         {erroEmail && <p className="text-red-500 text-sm">{erroEmail}</p>}
       </div>
@@ -323,7 +323,7 @@ export default function Login({ login, senha, email, Logar }) {
           nome={senha}
           valor={Valorsenha}
           onChange={(e) => alteraValorSenha(e.target.value)}
-          className="w-full p-2 text-lg border border-gray-300 rounded-md placeholder-yellow-400"
+          className="w-full p-2 text-lg border border-gray-300 rounded-md placeholder-amber-400"
         />
         {erroSenha && <p className="text-red-500 text-sm">{erroSenha}</p>}
       </div>
@@ -331,7 +331,7 @@ export default function Login({ login, senha, email, Logar }) {
       <button
         type="submit"
         onClick={Salvar}
-        className="w-full p-2 text-lg bg-yellow-400 text-white rounded-md"
+        className="w-full p-2 text-lg bg-amber-400 text-white rounded-md"
       >
         {Logar}
       </button>
