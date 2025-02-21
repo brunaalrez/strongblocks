@@ -1,17 +1,29 @@
 'use client'
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function PrimeiraInsumos() {
   const router = useRouter();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      {/* Logo */}
+      <div className="mb-6">
+        <Image
+          src="/strongblocks-logo.jpg"
+          alt="StrongBlocks Logo"
+          width={120}
+          height={120}
+          className="rounded-lg shadow-md"
+        />
+      </div>
+
       <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8 text-center">
         <h1 className="text-2xl font-bold text-stone-950">Situação Atual dos Insumos</h1>
         <hr className="my-4 border-gray-400" />
         
         <h2 className="text-xl text-stone-950">Areia</h2> 
-        <p className="text-gray-400 mt-4">Adicionou 50 Metros</p>
+        <p className="text-gray-400 mt-4"><strong>Total:</strong> 150 Metros</p>
 
         <p className="text-gray-400 mt-2">
           <strong>Fornecedor:</strong> Areia Dourada LTDA

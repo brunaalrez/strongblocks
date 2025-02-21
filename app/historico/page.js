@@ -28,7 +28,7 @@ export default function HistoricoAtividades() {
       {/* Logo */}
       <div className="mb-4">
         <Image
-          src="/strongblocks-logo.jpg" // Caminho corrigido
+          src="/strongblocks-logo.jpg"
           alt="StrongBlocks Logo"
           width={120}
           height={120}
@@ -39,11 +39,11 @@ export default function HistoricoAtividades() {
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Histórico de Atividades</h1>
 
       {/* Botões estilizados */}
-      <div className="flex flex-wrap justify-center gap-3 bg-gray-900 text-white px-6 py-2 rounded-lg shadow-lg">
+      <div className="flex flex-wrap justify-center gap-3 bg-gray-200 text-white px-6 py-2 rounded-lg shadow-lg">
         <button
           onClick={() => alteraExibicao("cadastro")}
           className={`px-4 py-2 rounded-lg transition ${
-            exibeCadastro ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-700 hover:bg-gray-600'
+            exibeCadastro ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-400 hover:bg-gray-200'
           }`}
         >
           Usuários
@@ -51,7 +51,7 @@ export default function HistoricoAtividades() {
         <button
           onClick={() => alteraExibicao("insumos")}
           className={`px-4 py-2 rounded-lg transition ${
-            exibeInsumos ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-700 hover:bg-gray-600'
+            exibeInsumos ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-400 hover:bg-gray-200'
           }`}
         >
           Insumos
@@ -59,7 +59,7 @@ export default function HistoricoAtividades() {
         <button
           onClick={() => alteraExibicao("produtos")}
           className={`px-4 py-2 rounded-lg transition ${
-            exibeProdutos ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-700 hover:bg-gray-600'
+            exibeProdutos ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-400 hover:bg-gray-200'
           }`}
         >
           Produtos
@@ -67,7 +67,7 @@ export default function HistoricoAtividades() {
         <button
           onClick={() => alteraExibicao("login")}
           className={`px-4 py-2 rounded-lg transition ${
-            exibeLogin ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-700 hover:bg-gray-600'
+            exibeLogin ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-400 hover:bg-gray-200'
           }`}
         >
           Login
@@ -86,7 +86,7 @@ export default function HistoricoAtividades() {
       <div className="mt-6">
         <button
           onClick={() => router.push('/')} // Navegação para a página inicial
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="px-6 py-2 bg-amber-400 text-white rounded-lg hover:bg-amber-400 transition"
         >
           Voltar
         </button>

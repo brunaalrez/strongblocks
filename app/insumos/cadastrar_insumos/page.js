@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // Importando a imagem
 
 export default function CadastroInsumo() {
   const router = useRouter();
@@ -10,6 +11,17 @@ export default function CadastroInsumo() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      {/* Logo */}
+      <div className="mb-6">
+        <Image
+          src="/strongblocks-logo.jpg"
+          alt="StrongBlocks Logo"
+          width={120}
+          height={120}
+          className="rounded-lg shadow-md"
+        />
+      </div>
+
       <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8">
         <h1 className="text-2xl font-bold text-stone-950 text-center">Cadastro de Insumo</h1>
         <hr className="my-4 border-gray-400" />
@@ -29,7 +41,7 @@ export default function CadastroInsumo() {
 
           {/* Quantidade */}
           <div>
-            <label className="block text-stone-950 font-medium">Quantidade (kg)</label>
+            <label className="block text-stone-950 font-medium">Quantidade (kg ou Metros)</label>
             <input
               type="number"
               value={quantidade}
