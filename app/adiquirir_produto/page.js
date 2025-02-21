@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"; 
-import Confirmado from "../confirmacao";
+import Confirmado from "./confirmacao";
 
 function PaginaAdiquirirProduto(attr) {
     const [carrinho, adicionaCarrinho] = useState(0);
@@ -14,25 +14,11 @@ function PaginaAdiquirirProduto(attr) {
     const [precoA, precoProdutoA] = useState(150);
     const [precoB, precoProdutoB] = useState(130);
 
-    const [produto, alteraProduto] = useState({});
-    const [produtos, alteraProdutos] = useState([{
-        id: 0,
-        tipo: "A"
-    },{
-        id: 1,
-        tipo: "B"
-    },{
-        id: 2,
-        tipo: "C"
-    }]);
+    const [produtos, alteraProdutos] = useState([]);
 
     useEffect(()=>{
-        const id_produto = attr.params.id;
-        produtos.map((i)=>{
-            if(i.id == id_produto){
-                alteraProduto(i)
-            }
-        })
+        const dados = JSON.parse(localStorage.getItem("carrinho"));
+        alteraProdutos(dados);
     }, [])
 
     function handleCarrinho(adicionar = false){
@@ -84,9 +70,14 @@ function PaginaAdiquirirProduto(attr) {
         <div>
             <p className="p-3 text-lg">Carrinho <strong>{carrinhoT}</strong> itens</p>
             <p className="p-3 text-lg">Valor total:<strong> R${total} </strong></p>
-            <div className="text-center border-solid text-gray-800 bg-yellow-50 px-5 border-gray-300 shadow-2xl m-3" >
-                
-                <h1>Bloco Tipo {produto.tipo}</h1>
+            
+            
+            {
+                produtos.map((i)=>
+                <div className="text-center border-solid text-gray-800 bg-yellow-50 px-5 border-gray-300 shadow-2xl m-3" >
+
+
+                <h1>Bloco Tipo {i.nome}</h1>
                 
                 <img src="https://placehold.co/400"/>
                 <hr/>
@@ -114,7 +105,11 @@ function PaginaAdiquirirProduto(attr) {
                     </div>
                 }
                 <hr/>
-             </div>
+                 </div>
+                )
+
+            }
+           
         </div>
      );
 }

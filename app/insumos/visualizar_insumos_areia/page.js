@@ -34,7 +34,7 @@ export default function PrimeiraInsumos() {
 
         <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
           <button
-            onClick={() => router.push('/insumos')}
+            onClick={() => router.push('/insumos/visualizar_insumos')}
             className="w-full sm:w-auto px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
           >
             Voltar

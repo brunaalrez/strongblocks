@@ -33,7 +33,7 @@ export default function Home() {
           </button>
 
           <button
-            onClick={() => router.push('/insumos')}
+            onClick={() => router.push('insumos/visualizar_e_cadastrar_insumos')}
             className="w-full px-6 py-3 bg-yellow-200 text-stone-950 rounded-lg shadow-md hover:bg-yellow-300 transition"
           >
             Insumos
