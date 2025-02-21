@@ -6,15 +6,15 @@ function Produtos(arrt) {
     const [blocos, alteraBloco] = useState([{
         id:0,
         imagem:"https://th.bing.com/th/id/OIP._pnugJyzaPk5tB80UY6WfgHaGF?rs=1&pid=ImgDetMain",
-        nome: "Bloco A"
+        nome: "A"
     },{
         id:1,
         imagem:"https://th.bing.com/th/id/OIP._pnugJyzaPk5tB80UY6WfgHaGF?rs=1&pid=ImgDetMain",
-        nome: "Bloco B"
+        nome: "B"
     },{
         id:2,
         imagem:"https://th.bing.com/th/id/OIP._pnugJyzaPk5tB80UY6WfgHaGF?rs=1&pid=ImgDetMain",
-        nome: "Bloco C"
+        nome: "C"
     }])
     
     return ( 
@@ -31,7 +31,7 @@ function Produtos(arrt) {
                 <ul>
                     {
                         blocos.map((i)=>
-                        <Blocos nomeproduto={i.nome} imagem={i.imagem}/>
+                        <Blocos produto={i}/>
                     )
                     }
                 </ul>
