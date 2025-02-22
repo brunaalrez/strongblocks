@@ -13,32 +13,31 @@ export default function Home() {
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <button
             onClick={() => router.push('/telalogin')}
-            className="w-full px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition"
+            className="w-full px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition duration-300 ease-in-out"
           >
             Login
           </button>
 
           <button
             onClick={() => router.push('/historico')}
-            className="w-full px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
+            className="w-full px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition duration-300 ease-in-out"
           >
             Histórico
           </button>
 
           <button
             onClick={() => router.push('/produtos')}
-            className="w-full px-6 py-3 bg-gray-400 text-stone-950 rounded-lg shadow-md hover:bg-gray-500 transition"
+            className="w-full px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition duration-300 ease-in-out"
           >
             Produtos
           </button>
 
           <button
             onClick={() => router.push('insumos/visualizar_e_cadastrar_insumos')}
-            className="w-full px-6 py-3 bg-yellow-200 text-stone-950 rounded-lg shadow-md hover:bg-yellow-300 transition"
+            className="w-full px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition duration-300 ease-in-out"
           >
             Insumos
           </button>
-
         </div>
       </div>
     </div>
