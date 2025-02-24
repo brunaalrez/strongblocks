@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createContext, useState } from "react";
+// import { createContext, useState } from "react";
 import Produtos from "../page";
 
 function Blocos(arrt) {
@@ -11,7 +11,6 @@ function Blocos(arrt) {
     const [carrinho, adicionaCarrinho] = useState(0);
     const [total, valorTotal] = useState(0);
 
-    const InsumoContext = createContext();
 
     function adicionaProduto() {
         if (localStorage.getItem("carrinho") == null) {
@@ -54,7 +53,6 @@ function Blocos(arrt) {
             <img src={arrt.produto.imagem} className="mt-5" />
             <p>{arrt.produto.nome}</p>
             <div>
-                <Produtos carrinho={carrinho} handleCarrinho={handleCarrinho}/>
             </div>
 
             {retira &&(
