@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image'; // Importando a imagem
+import Image from 'next/image';
 
 export default function CadastroInsumo() {
   const router = useRouter();
@@ -27,16 +27,19 @@ export default function CadastroInsumo() {
         <hr className="my-4 border-gray-400" />
 
         <div className="flex flex-col gap-4">
-           {/* Nome do Insumo  */}
+          {/* Nome do Insumo */}
           <div>
-            <label className="block text-stone-950 font-medium">Nome do Insumo</label>
-            <input
-              type="text"
+            <label className="block text-stone-950 font-medium">Insumo</label>
+            <select
               value={insumo}
               onChange={(e) => setInsumo(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg text-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-400"
-              placeholder="Ex: Cimento, Areia, Pó de Pedra"
-            />
+            >
+              <option value="">Selecione o Insumo</option>
+              <option value="Po de Pedra">Pó de pedra</option>
+              <option value="Areia">Areia</option>
+              <option value="Cimento">Cimento</option>
+            </select>
           </div>
 
           {/* Quantidade */}
@@ -69,6 +72,7 @@ export default function CadastroInsumo() {
           {/* Botões */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
             <button
+              type="button"
               onClick={() => router.push('/insumos')}
               className="w-full sm:w-auto px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition"
             >
@@ -76,6 +80,7 @@ export default function CadastroInsumo() {
             </button>
 
             <button
+              type="button"
               onClick={() => router.push('/insumos/visualizar_e_cadastrar_insumos')}
               className="w-full sm:w-auto px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
             >
