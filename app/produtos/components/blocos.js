@@ -2,15 +2,11 @@ import { useState } from "react";
 // import { createContext, useState } from "react";
 import Produtos from "../page";
 
-function Blocos(arrt) {
+function Blocos({arrt, handleCarrinho}) {
     const [mostrar, alteraMostrar] = useState(false);
     const [retira, alteraRetira] = useState(true)
 
     const [mostrarBotao, mostrarBotaos] = useState(false);
-
-    const [carrinho, adicionaCarrinho] = useState(0);
-    const [total, valorTotal] = useState(0);
-
 
     function adicionaProduto() {
         if (localStorage.getItem("carrinho") == null) {
@@ -22,21 +18,6 @@ function Blocos(arrt) {
             carrinho = JSON.stringify(carrinho);
             localStorage.setItem("carrinho", carrinho);
         }
-    }
-
-    function handleCarrinho(adicionar = false){
-        let novoCarrinho = carrinho;
-        
-        if(adicionar == true){
-            adicionaCarrinho(carrinho + 1)
-            novoCarrinho++;
-        }else{
-            if(carrinho > 0){
-                adicionaCarrinho(carrinho - 1)
-                novoCarrinho--;
-            }
-        }
-        valorTotal(novoCarrinho)
     }
 
     function Mostrar() {
