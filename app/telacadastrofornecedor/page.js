@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function CadastroFornecedor() {
   const [nome, setNome] = useState("");
@@ -63,16 +64,25 @@ export default function CadastroFornecedor() {
 
     if (valid) {
       console.log("Cadastro realizado com sucesso!");
-      
     }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-400">
-      <div className="bg-gray-200 p-8 rounded-lg shadow-lg max-w-lg w-full">
-        <h2 className="text-2xl font-bold text-center mb-6 text-black">Cadastro de Fornecedor</h2>
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 p-6">
+      
+      <div className="mb-4">
+        <Image
+          src="/strongblocks-logo.jpg"
+          alt="StrongBlocks Logo"
+          width={120}
+          height={120}
+          className="rounded-lg shadow-md"
+        />
+      </div>
 
-        
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">Cadastro de Fornecedor</h2>
+
+      <div className="w-full max-w-lg p-6 bg-white shadow-lg rounded-lg">
         <div className="mb-4">
           <input
             placeholder="Nome"
@@ -84,7 +94,6 @@ export default function CadastroFornecedor() {
           {erroNome && <p className="text-red-500 text-sm">{erroNome}</p>}
         </div>
 
-        
         <div className="mb-4">
           <input
             placeholder="Email"
@@ -96,7 +105,6 @@ export default function CadastroFornecedor() {
           {erroEmail && <p className="text-red-500 text-sm">{erroEmail}</p>}
         </div>
 
-        
         <div className="mb-4">
           <input
             placeholder="CPF"
@@ -108,7 +116,6 @@ export default function CadastroFornecedor() {
           {erroCpf && <p className="text-red-500 text-sm">{erroCpf}</p>}
         </div>
 
-        
         <div className="mb-4">
           <input
             placeholder="Telefone"
@@ -120,7 +127,6 @@ export default function CadastroFornecedor() {
           {erroTelefone && <p className="text-red-500 text-sm">{erroTelefone}</p>}
         </div>
 
-        
         <div className="mb-4">
           <input
             placeholder="Senha"
@@ -132,7 +138,6 @@ export default function CadastroFornecedor() {
           {erroSenha && <p className="text-red-500 text-sm">{erroSenha}</p>}
         </div>
 
-        
         <div className="mb-4">
           <input
             placeholder="Confirmar Senha"
@@ -144,16 +149,14 @@ export default function CadastroFornecedor() {
           {erroConfirmarSenha && <p className="text-red-500 text-sm">{erroConfirmarSenha}</p>}
         </div>
 
-        
         <button
           type="submit"
           onClick={Salvar}
-          className="w-full p-3 text-lg bg-amber-500 text-white rounded-md hover:bg-amber-400"
+          className="w-full p-3 text-lg bg-amber-400 text-white rounded-md hover:bg-amber-500"
         >
           Cadastrar
         </button>
 
-        
         <div className="mt-4 text-center">
           <p>Já tem uma conta?</p>
           <Link href="/telalogin">
