@@ -12,8 +12,8 @@ export default function Insumos() {
         <Image
           src="/strongblocks-logo.jpg"
           alt="StrongBlocks Logo"
-          width={250}
-          height={250}
+          width={120}
+          height={120}
           className="rounded-lg shadow-md"
         />
       </div>
