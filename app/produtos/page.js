@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Blocos from "./components/blocos";
 import Carrinho from "./components/carrinho";   
 
@@ -35,6 +35,12 @@ function Produtos() {
         }
         valorTotal(novoCarrinho)
     }
+
+    useEffect(()=>{
+        const quantidade = JSON.parse( localStorage.getItem("carrinho")).length
+        valorTotal(quantidade)
+        adicionaCarrinho(quantidade)
+    }, [])
 
     return ( 
         <div>

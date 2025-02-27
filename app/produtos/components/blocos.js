@@ -2,7 +2,7 @@ import { useState } from "react";
 // import { createContext, useState } from "react";
 import Produtos from "../page";
 
-function Blocos({arrt, handleCarrinho}) {
+function Blocos(arrt) {
     const [mostrar, alteraMostrar] = useState(false);
     const [retira, alteraRetira] = useState(true)
 
@@ -50,13 +50,13 @@ function Blocos({arrt, handleCarrinho}) {
                     <div>
                         <h2>Família de 20</h2>
                         <p>Sua largura e formato corresponde a 19cm</p>
-                        <button onClick={()=>{ handleCarrinho(true)}} className="py-1 px-6 rounded-lg shadow-md">Adiquirir</button>
+                        <button onClick={()=>{ arrt.handleCarrinho(true)}} className="py-1 px-6 rounded-lg shadow-md">Adiquirir</button>
                     </div>
                     
                     <div>
                         <h2>Família de 15</h2>
                         <p>Sua largura e formato corresponde a 14cm</p> 
-                        <button onClick={()=>{ handleCarrinho(true)}}  className="py-1 px-6 rounded-lg shadow-md">Adiquirir</button>
+                        <button onClick={()=>{ arrt.handleCarrinho(true)}}  className="py-1 px-6 rounded-lg shadow-md">Adiquirir</button>
                     </div>
                     
                 </div>
