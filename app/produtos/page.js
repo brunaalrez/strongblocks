@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
 import Blocos from "./components/blocos";
-import Carrinho from "./components/carrinho";   
 
 function Produtos() {
     const [carrinho, adicionaCarrinho] = useState(0);
@@ -51,7 +50,10 @@ function Produtos() {
             <div className="justify-flex px-30 text-center">
             <p>Qual tipo de bloco você precisa?</p>
             <p className="p-3 text-lg">Carrinho itens <strong>{total}</strong></p>
-            <button className="bg-yellow-400 text-gray-800 py-1 px-6 rounded-lg shadow-md hover:bg-yellow-500 transition-all no-underline">Ver carrinho</button>
+            <button onClick={()=> window.location.href='/teste'} 
+            className="bg-yellow-400 text-gray-800 py-1 px-6 rounded-lg shadow-md hover:bg-yellow-500 transition-all no-underline"
+            >Ver carrinho</button>
+
                 <ul>
                     {
                         blocos.map((i)=>
