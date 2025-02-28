@@ -1,10 +1,21 @@
 'use client'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function ComprovanteDeCompra() {
   function alertt(){
     alert('Compra aprovada!');
   }
+
+  const [produtos, alteraProdutos] = useState([])
+
+  useEffect(()=>{
+    if(localStorage.getItem("carrinho") == null){
+      return;
+    }
+    const itens = JSON.parse( localStorage.getItem("carrinho"))
+    alteraProdutos(itens)
+}, [])
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-200">
       <div className="bg-yellow-100 p-6 w-96 rounded-lg shadow-xl border border-gray-400">
@@ -12,18 +23,16 @@ function ComprovanteDeCompra() {
         <div className="space-y-4">
        
           <div className="space-y-2 text-black">
-            <div className="flex justify-between">
-              <span>Produto A</span>
-              <span>????</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Produto B</span>
-              <span>????</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Produto C</span>
-              <span>????</span>
-            </div>
+
+            {
+              produtos.map((i)=> 
+              <div className="flex justify-between">
+              <span>{i.nome}</span>
+              <span></span>
+              </div>
+            )
+            }
+            
           </div>
 
           <div className="border-t border-gray-400 pt-4 mt-4">

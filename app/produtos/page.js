@@ -35,11 +35,27 @@ function Produtos() {
         valorTotal(novoCarrinho)
     }
 
+    function removerCarrinho(remover = false){
+        let novoCarrinhoR = carrinho;
+        
+        if(remover == true){
+            adicionaCarrinho(carrinho - 1)
+            novoCarrinhoR--;
+        }else{
+            if(carrinho > 0){
+                adicionaCarrinho(carrinho = 0)
+            }
+        }
+        valorTotal(novoCarrinhoR)
+    }
+
     useEffect(()=>{
         const quantidade = JSON.parse( localStorage.getItem("carrinho")).length
         valorTotal(quantidade)
         adicionaCarrinho(quantidade)
     }, [])
+
+    
 
     return ( 
         <div>
@@ -57,7 +73,7 @@ function Produtos() {
                 <ul>
                     {
                         blocos.map((i)=>
-                        <Blocos key={i.id} produto={i} handleCarrinho={handleCarrinho}/>
+                        <Blocos key={i.id} produto={i} handleCarrinho={handleCarrinho} removerCarrinho={removerCarrinho}/>
                     )
                     }
                 </ul>
