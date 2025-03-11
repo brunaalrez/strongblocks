@@ -9,6 +9,18 @@ export default function CadastroInsumo() {
   const [quantidade, setQuantidade] = useState('');
   const [fornecedor, setFornecedor] = useState('');
 
+  const fornecedores = {
+    'Cimento': 'Itau Materiais',
+    'Areia': 'Areia Forte',
+    'Po de Pedra': 'PedraMax'
+  };
+
+  const handleInsumoChange = (e) => {
+    const selectedInsumo = e.target.value;
+    setInsumo(selectedInsumo);
+    setFornecedor(fornecedores[selectedInsumo] || '');
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       {/* Logo */}
@@ -32,7 +44,7 @@ export default function CadastroInsumo() {
             <label className="block text-stone-950 font-medium">Insumo</label>
             <select
               value={insumo}
-              onChange={(e) => setInsumo(e.target.value)}
+              onChange={handleInsumoChange}
               className="w-full px-4 py-2 border rounded-lg text-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-400"
             >
               <option value="">Selecione o Insumo</option>
@@ -57,16 +69,12 @@ export default function CadastroInsumo() {
           {/* Fornecedor */}
           <div>
             <label className="block text-stone-950 font-medium">Fornecedor</label>
-            <select
+            <input
+              type="text"
               value={fornecedor}
-              onChange={(e) => setFornecedor(e.target.value)}
-              className="w-full px-4 py-2 border rounded-lg text-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-400"
-            >
-              <option value="">Selecione um fornecedor</option>
-              <option value="Itau Materiais">Itau Materiais</option>
-              <option value="Areia Forte">Areia Forte</option>
-              <option value="PedraMax">PedraMax</option>
-            </select>
+              readOnly
+              className="w-full px-4 py-2 border rounded-lg bg-gray-200 text-stone-950"
+            />
           </div>
 
           {/* Botões */}
