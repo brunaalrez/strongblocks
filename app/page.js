@@ -26,7 +26,7 @@ export default function Home() {
           </button>
 
           <button
-            onClick={() => router.push('/produtos')}
+            onClick={() => router.push('/produtos/visualizar_cadastrar_produto')}
             className="w-full px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition duration-300 ease-in-out"
           >
             Produtos
