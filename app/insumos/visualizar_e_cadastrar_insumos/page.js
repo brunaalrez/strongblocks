@@ -38,6 +38,13 @@ export default function Insumos() {
           </button>
 
           <button
+            onClick={() => router.push('/insumos/remover_insumos')}
+            className="w-64 px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition text-lg"
+          >
+            Remover Insumo
+          </button>
+
+          <button
             onClick={() => router.push('/')}
             className="w-64 px-6 py-3 bg-amber-400 text-gray-900 rounded-lg shadow-md hover:bg-amber-500 transition text-lg"
           >

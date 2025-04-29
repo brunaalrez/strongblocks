@@ -24,8 +24,8 @@ export default function CadastroInsumo() {
   };
 
   const handleSubmit = async () => {
-    if (!insumo || !quantidade || !fornecedor) {
-      setMensagem("Todos os campos são obrigatórios!");
+    if (!insumo || !quantidade || !fornecedor || quantidade === '0') {
+      setMensagem("Todos os campos são obrigatórios e a quantidade deve ser diferente de zero!");
       return;
     }
 
@@ -34,14 +34,14 @@ export default function CadastroInsumo() {
         tipo_de_insumo: insumo,
         quantidade: quantidade,
         fornecedor: fornecedor
-      }
-      console.log(item)
-      const response = await axios.post("http://localhost:3001/cadastrar-insumo",item,
-        {headers: { "Content-Type": "application/json" }}
-      );
+      };
+      console.log(item);
+      const response = await axios.post("http://localhost:3001/cadastrar-insumo", item, {
+        headers: { "Content-Type": "application/json" }
+      });
 
       setMensagem("Insumo cadastrado com sucesso!");
-      setTimeout(() => router.push('/insumos'), 2000); // Redireciona após 2 segundos
+      setTimeout(() => router.push('/insumos'), 2000);
     } catch (error) {
       console.error("Erro ao cadastrar insumo:", error);
       setMensagem("Erro ao cadastrar insumo.");
@@ -61,7 +61,7 @@ export default function CadastroInsumo() {
       </div>
 
       <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8">
-        <h1 className="text-2xl font-bold text-stone-950 text-center">Cadastro de Insumo</h1>
+        <h1 className="text-2xl font-bold text-stone-950 text-center">Remover Insumo</h1>
         <hr className="my-4 border-gray-400" />
 
         <div className="flex flex-col gap-4">
@@ -84,9 +84,12 @@ export default function CadastroInsumo() {
             <input
               type="number"
               value={quantidade}
-              onChange={(e) => setQuantidade(e.target.value)}
+              onChange={(e) => {
+                const valor = Math.abs(Number(e.target.value));
+                setQuantidade(valor > 0 ? -valor : '');
+              }}
               className="w-full px-4 py-2 border rounded-lg text-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-400"
-              placeholder="Ex: 500"
+              placeholder="Ex: -500"
             />
           </div>
 
@@ -108,7 +111,7 @@ export default function CadastroInsumo() {
               onClick={handleSubmit}
               className="w-full sm:w-auto px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition"
             >
-              Cadastrar
+              Remover
             </button>
 
             <button

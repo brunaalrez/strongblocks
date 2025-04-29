@@ -36,7 +36,7 @@ export default function HistoricoAtividades() {
         />
       </div>
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Histórico de Atividades</h1>
+      <h1 className="text-3xl font-bold text-black-900 mb-6">Histórico de Atividades</h1>
 
       {/* Botões estilizados */}
       <div className="flex flex-wrap justify-center gap-3 bg-gray-200 text-white px-6 py-2 rounded-lg shadow-lg">
