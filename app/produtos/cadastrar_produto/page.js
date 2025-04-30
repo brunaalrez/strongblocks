@@ -1,11 +1,11 @@
 'use client'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+
 
 export default function cadastrarProduto() {
     const router = useRouter();
-    const [tipo, setTipo] = useRouter();
+    const [tipo, setTipo] = useState('');
     const [produtos, setProduto] = useState('');
     const [medida, setMedia] = useState('');
 
