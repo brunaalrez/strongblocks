@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 
@@ -8,6 +8,7 @@ export default function cadastrarProduto() {
     const [tipo, setTipo] = useState('');
     const [produtos, setProduto] = useState('');
     const [medida, setMedia] = useState('');
+    const [fornecedores, setFornecedores] = useState([]);
 
     const handleInsumoChange = (e) => {
         const selectedProduto = e.target.value;
