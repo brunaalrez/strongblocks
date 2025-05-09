@@ -1,3 +1,4 @@
+
 'use client'
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
@@ -29,12 +30,12 @@ export default function visializarCadastrar() {
                     Visualizar
                 </button>
 
-                <button
+                {/* <button
                     onClick={() => router.push('/produtos/cadastrar_produto')}
                     className="w-64 px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition text-lg"
                 >
                   Cadastrar um Produtos
-                </button>
+                </button> */}
 
                 <button
                     onClick={() => router.push('/')}
