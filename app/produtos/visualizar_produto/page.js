@@ -28,6 +28,8 @@ function visualizarProduto() {
                     className="w-full sm:w-auto px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
                 >
                     Bloco Tipo A
+                    <br/>
+                    19x19x39
                 </button>
 
                 <button
@@ -35,6 +37,8 @@ function visualizarProduto() {
                     className="w-full sm:w-auto px-6 py-3 bg-amber-400 text-stone-950 rounded-lg shadow-md hover:bg-amber-500 transition"
                 >
                     Bloco Tipo B
+                    <br/>
+                    14x19x39
                 </button>
 
                 <button
@@ -42,6 +46,8 @@ function visualizarProduto() {
                     className="w-full sm:w-auto px-6 py-3 bg-gray-400 text-stone-950 rounded-lg shadow-md hover:bg-gray-500 transition"
                 >
                     Bloco Tipo C
+                    <br/>
+                    09x19x39
                 </button>
 
                 <button
