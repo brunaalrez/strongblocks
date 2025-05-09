@@ -30,7 +30,7 @@ export default function Insumos() {
             Visualizar
           </button>
 
-          <button
+          {/* <button
             onClick={() => router.push('/insumos/cadastrar_insumos')}
             className="w-64 px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition text-lg"
           >
@@ -42,7 +42,7 @@ export default function Insumos() {
             className="w-64 px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition text-lg"
           >
             Remover Insumo
-          </button>
+          </button> */}
 
           <button
             onClick={() => router.push('/')}

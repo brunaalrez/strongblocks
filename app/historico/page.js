@@ -40,14 +40,14 @@ export default function HistoricoAtividades() {
 
       {/* Botões estilizados */}
       <div className="flex flex-wrap justify-center gap-3 bg-gray-200 text-white px-6 py-2 rounded-lg shadow-lg">
-        <button
+        {/* <button
           onClick={() => alteraExibicao("cadastro")}
           className={`px-4 py-2 rounded-lg transition ${
             exibeCadastro ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-400 hover:bg-gray-200'
           }`}
         >
           Usuários
-        </button>
+        </button> */}
         <button
           onClick={() => alteraExibicao("insumos")}
           className={`px-4 py-2 rounded-lg transition ${
@@ -64,14 +64,14 @@ export default function HistoricoAtividades() {
         >
           Produtos
         </button>
-        <button
+        {/* <button
           onClick={() => alteraExibicao("login")}
           className={`px-4 py-2 rounded-lg transition ${
             exibeLogin ? 'bg-amber-400 text-gray-900 font-semibold' : 'bg-gray-400 hover:bg-gray-200'
           }`}
         >
           Login
-        </button>
+        </button> */}
       </div>
 
       {/* Exibição das telas */}
