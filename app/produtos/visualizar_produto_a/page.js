@@ -52,7 +52,7 @@ export default function visualizarProdutoA() {
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
         <button
               type="button"
-              onClick={() => router.push('/insumos/visualizar_e_cadastrar_insumos')}
+              onClick={() => router.push('/produtos/visualizar_produto')}
               className="w-full sm:w-auto px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
             >
               Voltar
