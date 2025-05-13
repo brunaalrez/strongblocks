@@ -2,25 +2,12 @@
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
-export default function visualizarProdutoC() {
-
+export default function visualizarProdutoA() {
   const insumos = [
-    {
-      nome: "Bloco",
-      quantidade: "8",
-    },
-    {
-        nome: "Canaleta",
-        quantidade: "4",
-    },
-    {
-        nome: "Meio Bloco",
-        quantidade: "5",
-    },
-    {
-        nome: "Meia Canaleta",
-        quantidade: "2",
-    }
+    { nome: "Bloco", quantidade: "8" },
+    { nome: "Canaleta", quantidade: "4" },
+    { nome: "Meio Bloco", quantidade: "5" },
+    { nome: "Meia Canaleta", quantidade: "2" }
   ];
 
   const router = useRouter();
@@ -35,7 +22,8 @@ export default function visualizarProdutoC() {
         <h1 className="text-2xl font-bold text-yellow-600">Situação Atual dos Produtos</h1>
         <hr className="my-4 border-gray-300" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        {/* Grid dos cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
           {insumos.map((i, index) => (
             <div
               key={index}
@@ -50,13 +38,13 @@ export default function visualizarProdutoC() {
         </div>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <button
-              type="button"
-              onClick={() => router.push('/insumos/visualizar_e_cadastrar_insumos')}
-              className="w-full sm:w-auto px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
-            >
-              Voltar
-            </button>
+          <button
+            type="button"
+            onClick={() => router.push('/insumos/visualizar_e_cadastrar_insumos')}
+            className="w-full sm:w-auto px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
+          >
+            Voltar
+          </button>
         </div>
       </div>
     </div>
