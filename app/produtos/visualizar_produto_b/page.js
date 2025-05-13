@@ -5,9 +5,9 @@ import Image from 'next/image';
 export default function visualizarProdutoA() {
   const insumos = [
     { nome: "Bloco", quantidade: "8" },
-    { nome: "Canaleta", quantidade: "4" },
+    { nome: "Canaleta", quantidade: "6" },
     { nome: "Meio Bloco", quantidade: "5" },
-    { nome: "Meia Canaleta", quantidade: "2" }
+    { nome: "Meia Canaleta", quantidade: "0" }
   ];
 
   const router = useRouter();

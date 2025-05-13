@@ -6,8 +6,8 @@ export default function visualizarProdutoA() {
   const insumos = [
     { nome: "Bloco", quantidade: "8" },
     { nome: "Canaleta", quantidade: "4" },
-    { nome: "Meio Bloco", quantidade: "5" },
-    { nome: "Meia Canaleta", quantidade: "2" }
+    { nome: "Meio Bloco", quantidade: "1" },
+    { nome: "Meia Canaleta", quantidade: "7" }
   ];
 
   const router = useRouter();
