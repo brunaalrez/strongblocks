@@ -8,18 +8,18 @@ import Login from './components/login';
 import Image from 'next/image';
 
 export default function HistoricoAtividades() {
-  const [exibeCadastro, alteraExibeCadastro] = useState(true);
+  // const [exibeCadastro, alteraExibeCadastro] = useState(true);
   const [exibeInsumos, alteraExibeInsumos] = useState(false);
   const [exibeProdutos, alteraExibeProdutos] = useState(false);
-  const [exibeLogin, alteraExibelogin] = useState(false);
+  // const [exibeLogin, alteraExibelogin] = useState(false);
 
   const router = useRouter(); // Definindo o router
 
   function alteraExibicao(tela) {
-    alteraExibeCadastro(tela === "cadastro");
+    // alteraExibeCadastro(tela === "cadastro");
     alteraExibeInsumos(tela === "insumos");
     alteraExibeProdutos(tela === "produtos");
-    alteraExibelogin(tela === "login");
+    // alteraExibelogin(tela === "login");
   }
 
   return (
@@ -76,10 +76,10 @@ export default function HistoricoAtividades() {
 
       {/* Exibição das telas */}
       <div className="mt-6 w-full max-w-3xl p-6 bg-white shadow-lg rounded-lg">
-        {exibeCadastro && <Cadastro />}
+        {/* {exibeCadastro && <Cadastro />} */}
         {exibeInsumos && <Insumos />}
         {exibeProdutos && <Produtos />}
-        {exibeLogin && <Login />}
+        {/* {exibeLogin && <Login />} */}
       </div>
 
       {/* Botão Voltar */}

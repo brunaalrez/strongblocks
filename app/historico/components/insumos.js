@@ -4,96 +4,21 @@ import { useState } from "react";
 export default function Insumos() {
 
   const [insumo, alterainsumo] = useState([
-    {
-      id: 0,
-      nome: "Marly Lopes",
-      ação: "Adicionou 500kg de cimento",
-      Datahora: "2025-02-06 às 10:01:45"
-    },
-    {
-      id: 1,
-      nome: "Carlos Mendes",
-      ação: "Removeu 200kg de areia",
-      Datahora: "2025-02-06 às 11:15:30"
-    },
-    {
-      id: 2,
-      nome: "Ana Souza",
-      ação: "Adicionou 300kg de cimento",
-      Datahora: "2025-02-06 às 12:45:22"
-    },
-    {
-      id: 3,
-      nome: "João Ferreira",
-      ação: "Adicionou 20kg de pó de pedra",
-      Datahora: "2025-02-07 às 08:20:10"
-    },
-    {
-      id: 4,
-      nome: "Fernanda Costa",
-      ação: "Removeu 50kg de cimento",
-      Datahora: "2025-02-07 às 09:35:50"
-    },
-    {
-      id: 5,
-      nome: "Lucas Martins",
-      ação: "Adicionou 100kg de areia",
-      Datahora: "2025-02-07 às 10:55:15"
-    },
-    {
-      id: 6,
-      nome: "Ricardo Lima",
-      ação: "Adicionou 30kg de cimento",
-      Datahora: "2025-02-07 às 11:10:40"
-    },
-    {
-      id: 7,
-      nome: "Paula Oliveira",
-      ação: "Removeu 15kg de pó de pedra",
-      Datahora: "2025-02-08 às 07:45:30"
-    },
-    {
-      id: 8,
-      nome: "Gustavo Rocha",
-      ação: "Adicionou 250kg de areia",
-      Datahora: "2025-02-08 às 09:10:25"
-    },
-    {
-      id: 9,
-      nome: "Tatiane Silva",
-      ação: "Adicionou 40kg de cimento",
-      Datahora: "2025-02-08 às 11:55:12"
-    },
-    {
-      id: 10,
-      nome: "Eduardo Nunes",
-      ação: "Removeu 50kg de areia",
-      Datahora: "2025-02-09 às 08:30:45"
-    },
-    {
-      id: 11,
-      nome: "Patrícia Moreira",
-      ação: "Adicionou 150kg de pó de pedra",
-      Datahora: "2025-02-09 às 10:40:33"
-    },
-    {
-      id: 12,
-      nome: "Sérgio Almeida",
-      ação: "Adicionou 10kg de cimento",
-      Datahora: "2025-02-09 às 14:05:50"
-    },
-    {
-      id: 13,
-      nome: "Vanessa Duarte",
-      ação: "Removeu 300kg de pó de pedra",
-      Datahora: "2025-02-10 às 09:15:20"
-    },
-    {
-      id: 14,
-      nome: "Marcelo Antunes",
-      ação: "Adicionou 50kg de areia",
-      Datahora: "2025-02-10 às 10:30:10"
-    }
+    { nome: "Marly Lopes", ação: "Cadastrou 2 paletes de Bloco tipo A", Datahora: "2024-12-06 às 09:06:50" },
+    { nome: "Carlos Mendes", ação: "Cadastrou 5 paletes de Bloco tipo B", Datahora: "2024-12-06 às 09:30:12" },
+    { nome: "Ana Souza", ação: "Realizou venda de 3 paletes de Bloco tipo A", Datahora: "2024-12-06 às 10:15:30" },
+    { nome: "João Ferreira", ação: "Removeu 1 palete de Bloco tipo C", Datahora: "2024-12-06 às 10:45:05" },
+    { nome: "Fernanda Costa", ação: "Atualizou quantidade de 4 paletes de Bloco tipo A", Datahora: "2024-12-06 às 11:20:40" },
+    { nome: "Lucas Martins", ação: "Cadastrou 6 paletes de Bloco tipo D", Datahora: "2024-12-06 às 12:00:18" },
+    { nome: "Ricardo Lima", ação: "Realizou venda de 2 paletes de Bloco tipo B", Datahora: "2024-12-06 às 12:30:50" },
+    { nome: "Paula Oliveira", ação: "Atualizou 1 palete de Bloco tipo E", Datahora: "2024-12-06 às 13:05:15" },
+    { nome: "Gustavo Rocha", ação: "Cadastrou 10 paletes de Bloco tipo C", Datahora: "2024-12-06 às 13:40:22" },
+    { nome: "Tatiane Silva", ação: "Realizou venda de 4 paletes de Bloco tipo A", Datahora: "2024-12-06 às 14:10:55" },
+    { nome: "Eduardo Nunes", ação: "Removeu 3 paletes de Bloco tipo D", Datahora: "2024-12-06 às 14:50:05" },
+    { nome: "Patrícia Moreira", ação: "Atualizou 2 paletes de Bloco tipo B", Datahora: "2024-12-06 às 15:30:12" },
+    { nome: "Sérgio Almeida", ação: "Cadastrou 7 paletes de Bloco tipo F", Datahora: "2024-12-06 às 16:00:47" },
+    { nome: "Vanessa Duarte", ação: "Realizou venda de 5 paletes de Bloco tipo C", Datahora: "2024-12-06 às 16:35:20" },
+    { nome: "Marcelo Antunes", ação: "Cadastrou 3 paletes de Bloco tipo E", Datahora: "2024-12-06 às 17:05:30" }
   ]);
 
   return (
@@ -103,9 +28,9 @@ export default function Insumos() {
       </div>
 
       <div className="p-4 flex justify-between font-semibold bg-stone-900 text-stone-100 border-b border-stone-700">
-        <span>Nome</span>
-        <span>Ação</span>
-        <span>Data</span>
+        <span>Insumo</span>
+        <span>Quantidade</span>
+        <span>Data e Hora</span>
       </div>
 
       {insumo.map((i, index) => (
