@@ -10,7 +10,7 @@ export default function visualizarProdutoA() {
   // Função para buscar produtos do backend 
   async function buscaQuantidade() {
     try {
-      const response = await axios.get("http://localhost:4000/estoque/produto/quantidade"); // Requisição GET para a API
+      const response = await axios.get("http://localhost:4000/produtos/a"); // Requisição GET para a API
       console.log(response.data); // Exibe a resposta no console
       setProdutos(response.data); // Atualiza o estado com os dados recebidos
     } catch (error) {
@@ -50,7 +50,7 @@ export default function visualizarProdutoA() {
             >
               <h2 className="text-xl font-bold text-yellow-700">{i.nome}</h2>
               <div className="text-sm text-gray-600">
-                <p><span className="font-semibold text-gray-800">Quantidade:</span> {i.quantidade} Palete</p>
+                <p><span className="font-semibold text-gray-800">Quantidade:</span> {i.quantidade} Paletes</p>
               </div>
             </div>
           ))}
