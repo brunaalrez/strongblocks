@@ -6,43 +6,15 @@ import axios from 'axios';
 
 export default function VisualizarInsumo() {
   const [insumos, setInsumos] = useState([
-    {
-      nome: "Areia",
-      quantidade: "50",
-      fornecedor: "Areia Dourada LTDA",
-      endereco: "Rodovia das Dunas, Km 45 - Região Litorânea, Fortaleza, CE",
-      telefone: "(85) 3456-7890",
-      whatsapp: "(85) 99876-5432",
-      email: "comercial@areiadourada.com.br",
-      slogan: "A base sólida para sua construção começa com a nossa areia!"
-    },
-    {
-      nome: "Cimento",
-      quantidade: "100",
-      fornecedor: "ITAU",
-      endereco: "Av. Principal, 123 - Centro, São Paulo, SP",
-      telefone: "(11) 1234-5678",
-      whatsapp: "(11) 98765-4321",
-      email: "fornecimentoitau@empresa.com.br",
-      slogan: "Fundamentando sua obra com a força do nosso cimento!"
-    },
-    {
-      nome: "Pó de Pedra",
-      quantidade: "75",
-      fornecedor: "Pedras & Cia LTDA",
-      endereco: "Estrada das Pedreiras, 789 - Zona Industrial, Rio de Janeiro, RJ",
-      telefone: "(21) 4002-8922",
-      whatsapp: "(21) 99988-7766",
-      email: "contato@pedrasecia.com.br",
-      slogan: "Da rocha ao concreto, fornecendo qualidade e resistência!"
-    }
   ]);
+
+
 
   const router = useRouter();
 
   async function BuscaInsumo() {
     try {
-      const response = await axios.get("http://localhost:4000/produtos/tipo");
+      const response = await axios.get("http://localhost:4000/insumo");
       console.log(response.data);
       setInsumos(response.data);
     } catch (error) {
@@ -84,12 +56,12 @@ export default function VisualizarInsumo() {
               <div className="text-sm text-gray-600">
                 <p><span className="font-semibold text-gray-800">Total:</span> {i.quantidade}</p>
                 <p><span className="font-semibold text-gray-800">Fornecedor:</span> {i.fornecedor}</p>
-                <p><span className="font-semibold text-gray-800">Endereço:</span> {i.endereco}</p>
+                {/* <p><span className="font-semibold text-gray-800">Endereço:</span> {i.endereco}</p>
                 <p><span className="font-semibold text-gray-800">Telefone:</span> {i.telefone}</p>
                 <p><span className="font-semibold text-gray-800">Whatsapp:</span> {i.whatsapp}</p>
-                <p><span className="font-semibold text-gray-800">Email:</span> {i.email}</p>
+                <p><span className="font-semibold text-gray-800">Email:</span> {i.email}</p> */}
               </div>
-              <p className="text-gray-500 italic mt-2 border-t pt-2 text-sm">"{i.slogan}"</p>
+              {/* <p className="text-gray-500 italic mt-2 border-t pt-2 text-sm">"{i.slogan}"</p> */}
             </div>
           ))}
         </div>
