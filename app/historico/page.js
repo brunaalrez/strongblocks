@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 export default function HistoricoAtividades() {
   // const [exibeCadastro, alteraExibeCadastro] = useState(true);
-  const [exibeInsumos, alteraExibeInsumos] = useState(false);
+  const [exibeInsumos, alteraExibeInsumos] = useState(true); // ← Agora começa com Insumos visível
   const [exibeProdutos, alteraExibeProdutos] = useState(false);
   // const [exibeLogin, alteraExibelogin] = useState(false);
 

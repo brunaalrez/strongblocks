@@ -4,23 +4,21 @@ import { useEffect, useState } from "react";
 
 export default function Insumos() {
 
-  const [insumo, alterainsumo] = useState([
-    
-  ]);
+  const [insumo, alterainsumo] = useState([]);
 
   async function BuscaInsumo() {
-    try{
+    try {
       const response = await axios.get("http://localhost:4000/movimentacoes/insumo");
       console.log(response.data);
       alterainsumo(response.data);
-    } catch(error){
-      console.error("Erro ao buscar insumo", error)
+    } catch (error) {
+      console.error("Erro ao buscar insumo", error);
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     BuscaInsumo();
-  }, [])
+  }, []);
 
   return (
     <div className="w-full max-w-4xl bg-stone-950 shadow-xl rounded-xl overflow-hidden text-white">
@@ -28,22 +26,34 @@ export default function Insumos() {
         Histórico de Movimentações de Insumos
       </div>
 
-      <div className="p-4 flex justify-between font-semibold bg-stone-900 text-stone-100 border-b border-stone-700">
-        <span>Insumo</span>
-        <span>Quantidade</span>
-        <span>Ação</span>
-        <span>Data e Hora</span>
+      {/* Cabeçalho da tabela com colunas alinhadas */}
+      <div className="p-4 flex font-semibold bg-stone-900 text-stone-100 border-b border-stone-700">
+        <span className="w-1/4">Insumo</span>
+        <span className="w-1/4">Quantidade</span>
+        <span className="w-1/4">Movimentação</span>
+        <span className="w-1/4 text-right">Data e Hora</span>
       </div>
 
+      {/* Linhas com colunas alinhadas igual o cabeçalho */}
       {insumo.map((i, index) => (
         <div 
           key={index} 
-          className="p-4 flex justify-between items-start bg-stone-700 border-b border-stone-800 hover:bg-stone-600 transition"
+          className="p-4 flex items-start bg-stone-700 border-b border-stone-800 hover:bg-stone-600 transition"
         >
-          <span className="w-1/3">{i.tpi.nome}</span>
-          <span className="w-1/3">{i.quantidade}</span>
-          <span className="w-1/3">{i.tipo_movimentacao}</span>
-          <span className="w-1/3 text-right">{i.date}</span>
+          <span className="w-1/4">{i.tpi.nome}</span>
+          <span className="w-1/4">{i.quantidade}</span>
+          <span className="w-1/4">{i.tipo_movimentacao}</span>
+          <span className="w-1/4 text-right">
+            {new Date(i.date).toLocaleString('pt-BR', {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit',
+              hour12: false
+            })}
+          </span>
         </div>
       ))}
     </div>
