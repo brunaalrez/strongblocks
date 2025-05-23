@@ -10,7 +10,7 @@ export default function Cadastro() {
   // 🔎 Função para buscar movimentações de produtos
   async function buscaProdutos() {
     try {
-      const response = await axios.get("http://localhost:4000/movimentacoes/produto");
+      const response = await axios.get("http://localhost:4000/movimentacoes/Produto");
       console.log(response.data);
       alteraProdutos(response.data);
     } catch (error) {
@@ -34,7 +34,7 @@ export default function Cadastro() {
       <div className="p-4 flex font-semibold bg-stone-900 text-stone-100 border-b border-stone-700">
         <span className="w-1/4">Produto</span>
         <span className="w-1/4">Quantidade</span>
-        <span className="w-1/4">Movimentação</span>
+        <span className="w-1/4">Tipo</span>
         <span className="w-1/4 text-right">Data e Hora</span>
       </div>
 
@@ -44,7 +44,7 @@ export default function Cadastro() {
           key={index}
           className="p-4 flex items-start bg-stone-700 border-b border-stone-800 hover:bg-stone-600 transition"
         >
-          <span className="w-1/4">{item.tpi?.nome ?? 'Sem nome'}</span>
+          <span className="w-1/4">{item.tpi.nome ?? 'Sem nome'}</span>
           <span className="w-1/4">{item.quantidade}</span>
           <span className="w-1/4">{item.tipo_movimentacao}</span>
           <span className="w-1/4 text-right">
