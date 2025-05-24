@@ -34,7 +34,7 @@ export default function Cadastro() {
       <div className="p-4 flex font-semibold bg-stone-900 text-stone-100 border-b border-stone-700">
         <span className="w-1/4">Produto</span>
         <span className="w-1/4">Quantidade</span>
-        <span className="w-1/4">Tipo</span>
+        <span className="w-1/4">Movimentação</span>
         <span className="w-1/4 text-right">Data e Hora</span>
       </div>
 
