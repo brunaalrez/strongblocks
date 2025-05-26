@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import host from "@/app/lib/host";
 
 export default function Cadastro() {
 
@@ -10,7 +11,7 @@ export default function Cadastro() {
   // 🔎 Função para buscar movimentações de produtos
   async function buscaProdutos() {
     try {
-      const response = await axios.get("http://localhost:4000/movimentacoes/Produto");
+      const response = await axios.get(host + "/movimentacoes/Produto");
       console.log(response.data);
       alteraProdutos(response.data);
     } catch (error) {

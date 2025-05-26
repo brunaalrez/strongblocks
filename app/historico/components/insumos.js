@@ -1,4 +1,5 @@
 'use client'
+import host from "@/app/lib/host";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -8,7 +9,7 @@ export default function Insumos() {
 
   async function BuscaInsumo() {
     try {
-      const response = await axios.get("http://localhost:4000/movimentacoes/Insumo");
+      const response = await axios.get(host + "/movimentacoes/Insumo");
       console.log(response.data);
       alterainsumo(response.data);
     } catch (error) {

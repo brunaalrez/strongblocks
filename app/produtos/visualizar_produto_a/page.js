@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import host from '@/app/lib/host';
 
 export default function visualizarProdutoA() {
   const router = useRouter();
@@ -10,7 +11,7 @@ export default function visualizarProdutoA() {
   // Função para buscar produtos do backend 
   async function buscaQuantidade() {
     try {
-      const response = await axios.get("http://localhost:4000/produtos/a"); // Requisição GET para a API
+      const response = await axios.get(host + "/produtos/a"); // Requisição GET para a API
       console.log(response.data); // Exibe a resposta no console
       setProdutos(response.data); // Atualiza o estado com os dados recebidos
     } catch (error) {
