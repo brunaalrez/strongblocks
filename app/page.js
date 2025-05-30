@@ -33,14 +33,14 @@ export default function Home() {
           </button>
 
           <button
-            onClick={() => router.push('/produtos/visualizar_cadastrar_produto')}
+            onClick={() => router.push('/produtos/visualizar_produto')}
             className="w-full px-8 py-4 text-lg bg-amber-400 text-stone-950 font-semibold rounded-xl shadow-md hover:bg-amber-500 transition duration-300 ease-in-out"
           >
             Produtos
           </button>
 
           <button
-            onClick={() => router.push('insumos/visualizar_e_cadastrar_insumos')}
+            onClick={() => router.push('insumos/visualizar_insumos')}
             className="w-full px-8 py-4 text-lg bg-amber-400 text-stone-950 font-semibold rounded-xl shadow-md hover:bg-amber-500 transition duration-300 ease-in-out"
           >
             Insumos

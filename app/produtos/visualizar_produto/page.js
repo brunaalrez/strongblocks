@@ -51,7 +51,7 @@ function visualizarProduto() {
                 </button>
 
                 <button
-                    onClick={() => router.push('/produtos/visualizar_cadastrar_produto')}
+                    onClick={() => router.push('/')}
                     className="w-full sm:w-auto px-6 py-3 bg-stone-950 text-yellow-200 rounded-lg shadow-md hover:bg-stone-800 transition"
                 >
                     Voltar
