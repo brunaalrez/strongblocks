@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import axios from 'axios';
+import host from '@/app/lib/host';
 
 export default function VisualizarInsumo() {
   const [insumos, setInsumos] = useState([
@@ -14,7 +15,7 @@ export default function VisualizarInsumo() {
 
   async function BuscaInsumo() {
     try {
-      const response = await axios.get("http://localhost:4000/insumo");
+      const response = await axios.get(host + "/insumo");
       console.log(response.data);
       setInsumos(response.data);
     } catch (error) {
