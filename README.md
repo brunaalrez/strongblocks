@@ -57,15 +57,18 @@ bun dev
 Acesse a aplicação em http://localhost:3000
 
 🛠️ Estrutura do Projeto
-app/: Contém os componentes e páginas da aplicação
 
-public/: Arquivos públicos como imagens e ícones
-
-tailwind.config.mjs: Configurações do Tailwind CSS
-
-next.config.mjs: Configurações do Next.js
-
-package.json: Dependências e scripts do projeto
+strongblocks/
+│
+├── app/                → Páginas e componentes da aplicação
+├── public/             → Arquivos públicos (imagens, ícones)
+├── styles/             → Configurações globais e estilos
+├── .eslintrc.json      → Configuração do ESLint
+├── .prettierrc         → Configuração do Prettier
+├── tailwind.config.mjs → Configurações do Tailwind CSS
+├── next.config.mjs     → Configurações do Next.js
+├── package.json        → Dependências e scripts
+└── README.md           → Documentação do projeto
 
 📄 Licença
 Este projeto é de uso acadêmico e não possui uma licença específica definida.
