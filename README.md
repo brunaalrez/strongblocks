@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+StrongBlocks
+Projeto Integrador TI 42, UC 15 – Senac São Carlos
 
-## Getting Started
 
-First, run the development server:
+🧱 Sobre o Projeto
+O StrongBlocks é um projeto desenvolvido como parte do Projeto Integrador da turma TI 42, UC 15, do Senac São Carlos. Trata-se de uma aplicação web construída com Next.js, utilizando Tailwind CSS para estilização, com o objetivo de oferecer uma experiência moderna e responsiva.
 
-```bash
+🚀 Tecnologias Utilizadas
+Next.js – Framework React para aplicações web
+
+Tailwind CSS – Framework utilitário para estilização
+
+PostCSS – Ferramenta para transformação de CSS
+
+ESLint – Ferramenta de linting para JavaScript
+
+Vercel – Plataforma de hospedagem e deploy contínuo
+
+⚙️ Como Executar o Projeto
+Pré-requisitos
+Node.js instalado
+
+Gerenciador de pacotes: npm, yarn, pnpm ou bun
+
+Passos para execução
+Clone o repositório:
+
+bash
+Copiar
+Editar
+git clone https://github.com/brunaalrez/strongblocks.git
+cd strongblocks
+Instale as dependências:
+
+bash
+Copiar
+Editar
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+# ou
+bun install
+Inicie o servidor de desenvolvimento:
+
+bash
+Copiar
+Editar
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
-```
+Acesse a aplicação em http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🛠️ Estrutura do Projeto
+app/: Contém os componentes e páginas da aplicação
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+public/: Arquivos públicos como imagens e ícones
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+tailwind.config.mjs: Configurações do Tailwind CSS
 
-## Learn More
+next.config.mjs: Configurações do Next.js
 
-To learn more about Next.js, take a look at the following resources:
+package.json: Dependências e scripts do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📄 Licença
+Este projeto é de uso acadêmico e não possui uma licença específica definida.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+👥 Contribuidores
+Bruna Alvarez
+Frediney C. Diniz  
+Gabriel Borges
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ Agradecimentos
+Agradecimento especial ao Senac São Carlos e aos colegas da turma TI 42, que contribuíram para a construção desse projeto.
